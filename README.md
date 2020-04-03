@@ -21,7 +21,7 @@ After downloading the repository to your local machine, you  need to follow the 
 3. Change directory to /app, run the command:  
 > python run.py
 
-4. At this time you should see some output in the terminal like 'Running on http://0.0.0.0:3001/'. Then, open your web browser and open the web link. Now you should be able to see the web page.
+4. At this point you should see some output in the terminal like 'Running on http://0.0.0.0:3001/'. Then, open your web browser and open the web link. Now you should be able to see the web page.
 
 
 
