@@ -14,13 +14,13 @@ The python file in this project is based on Python 3.6.4. You will need packages
 
 After downloading the repository to your local machine, you  need to follow the steps below:
 1. In the terminal, change directory to /data, run the command:
-> python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db  
+        python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db  
 
 2. Change directory to /models, run the command:  
-> python train_classifier.py ../data/DisasterResponse.db classifier.pkl  
+        python train_classifier.py ../data/DisasterResponse.db classifier.pkl  
 
 3. Change directory to /app, run the command:  
-> python run.py
+        python run.py
 
 4. You should see some output in the terminal like 'Running on http://0.0.0.0:3001/'. Then, open a browser and open the web link. Now you should be able to see the web page.
 
