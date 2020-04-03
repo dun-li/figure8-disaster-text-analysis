@@ -54,7 +54,9 @@ def build_model():
         ('clf', MultiOutputClassifier(RandomForestClassifier()))
         ])
         
-    # define parameters for GridSearchCV
+    # define parameters for GridSearchCV. Only two parameters are used here to 
+    # save the training time. If higher accuracy is needed, please search more 
+    # parameter space.
     parameters = {
         'clf__estimator__n_estimators': [1],
         'clf__estimator__min_samples_split': [2,5]
