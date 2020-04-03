@@ -39,9 +39,12 @@ def transform_data(messages, categories):
     # drop duplicates
     df.drop_duplicates(inplace=True)
     return df
-# 
-# 
+ 
+
 def load_data(df):
+    """
+    Store the clean data to a sqlite database.
+    """
     engine = create_engine('sqlite:///'+database_filename)
     with engine.connect() as con:
         con.execute('drop table if exists disaster')
@@ -52,7 +55,6 @@ if __name__ == '__main__':
     if len(sys.argv) != 4:
         print('Error: 4 input arguments needed!')
         exit()
-    # get filename of dataset
     _, messages_filename, categories_filename, database_filename = sys.argv
     messages, categories = extract_data()
     df = transform_data(messages, categories)

@@ -19,11 +19,11 @@ from sklearn.multioutput import MultiOutputClassifier
 from sklearn.metrics import classification_report
 import time
 
-# nltk.download(['punkt', 'stopwords', 'wordnet'])
+nltk.download(['punkt', 'stopwords', 'wordnet'])
 
 def load_data():
     """
-    read table from database
+    read data from database
     """
     engine = create_engine('sqlite:///'+database_filename)
     df = pd.read_sql_table('disaster', engine)
@@ -55,13 +55,12 @@ def build_model():
         ])
         
     # define parameters for GridSearchCV. Only two parameters are used here to 
-    # save the training time. If higher accuracy is needed, please search more 
+    # save the training time. If higher accuracy is required, please search more 
     # parameter space.
     parameters = {
         'clf__estimator__n_estimators': [1],
         'clf__estimator__min_samples_split': [2,5]
         }
-    # create gridsearch object and return as final model pipeline
     cv = GridSearchCV(pipeline, param_grid=parameters)
 
     return cv
@@ -112,5 +111,5 @@ if __name__ == '__main__':
     trained_model = train(X, y, model)
     export_model(trained_model) # save model
     end_time = time.time()
-    print ('Total time is: {:.2f} seconds'.format(end_time-start_time))
+    print ('Total running time is: {:.2f} seconds'.format(end_time-start_time))
 
